@@ -11,7 +11,16 @@ class user implements UserInterface
         $this->getRequest($_REQUEST);
     }
 
+    public function getRequest($request)
+    {
+        $this->request = $request;
+    }
 
-
+    public function parseRequest()
+    {
+        foreach ($this->request as $item => $value) {
+            echo $item . " ====> " .  $value;
+        }
+    }
 
 }
